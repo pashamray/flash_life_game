@@ -52,7 +52,7 @@ package life
 			{
 				for (var j:int = 0; j < vCurCells[i].length; j++) 
 				{	
-					vCurCells[i][j].life = ((Math.round(Math.random() * 6) == 2)) ? true : false;
+					vCurCells[i][j].life = ((Math.round(Math.random() * 10) == 2)) ? true : false;
 				}
 			}			
 		}

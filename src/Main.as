@@ -24,7 +24,7 @@ package
 		{
 			removeEventListener(Event.ADDED_TO_STAGE, init);
 			
-			life = new Life(50, 50);
+			life = new Life(40, 40);
 			//life.start();
 			
 			addChild(life as DisplayObject);
