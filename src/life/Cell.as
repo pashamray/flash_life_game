@@ -1,6 +1,7 @@
 package life 
 {
 	import flash.display.Sprite;
+	import flash.events.MouseEvent;
 	
 	/**
 	 * ...
@@ -23,6 +24,21 @@ package life
 			_color = color;
 			
 			life = false;
+			
+			clear();
+			
+			this.mouseEnabled = true;
+			this.buttonMode = true;
+			this.addEventListener(MouseEvent.CLICK, onMouseEvent);
+		}
+		
+		private function onMouseEvent(event:MouseEvent):void 
+		{
+			switch(event.type) {
+				case MouseEvent.CLICK:
+					life = !life;
+					break;
+			}
 		}
 
 		public function set life(value:Boolean):void {
@@ -43,9 +59,9 @@ package life
 		
 		private function clear():void {
 			graphics.clear();
-			//graphics.beginFill(0xC0C0C0);
-			//graphics.drawRect(0, 0, _width, _height);
-			//graphics.endFill();
+			graphics.beginFill(0x1D1D1D);
+			graphics.drawRect(0, 0, _width, _height);
+			graphics.endFill();
 		}
 		
 		private function draw():void {
